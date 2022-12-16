@@ -96,8 +96,7 @@
          charset (c/charsets charset)
          factory (DefaultTerminalFactory.)
          terminal (case kind
-                    :auto   (.createTerminal factory)
-                    :unix   (.createUnixTerminal factory in out charset))]
+                    :auto   (.createTerminal factory))]
      (when resize-listener
        (add-resize-listener terminal resize-listener))
      terminal)))
