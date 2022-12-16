@@ -1,14 +1,14 @@
 (ns lanterna.common
-  (:import com.googlecode.lanterna.input.Key)
+  (:import com.googlecode.lanterna.input.KeyStroke)
   (:require [lanterna.constants :as c]))
 
 
-(defn parse-key [^Key k]
+(defn parse-key [^KeyStroke k]
   (when k
-    (let [kind (c/key-codes (.getKind k))]
-      (if (= kind :normal)
+    (let [key-type (c/key-codes (.getKeyType k))]
+      (if (= key-type :normal)
         (.getCharacter k)
-        kind))))
+        key-type))))
 
 (defn block-on
   "Repeatedly apply func to args until a non-nil value is returned.

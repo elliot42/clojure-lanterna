@@ -28,7 +28,8 @@
    :blinking SGR/BLINK})
 
 (def key-codes
-  {com.googlecode.lanterna.input.KeyType/Escape :escape
+  {com.googlecode.lanterna.input.KeyType/Character :character
+   com.googlecode.lanterna.input.KeyType/Escape :escape
    com.googlecode.lanterna.input.KeyType/Backspace :backspace
    com.googlecode.lanterna.input.KeyType/ArrowLeft :left
    com.googlecode.lanterna.input.KeyType/ArrowRight :right
