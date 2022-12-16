@@ -21,7 +21,7 @@
   "
   [^Terminal terminal listener-fn]
   (let [listener (reify com.googlecode.lanterna.terminal.TerminalResizeListener
-                   (onResized [this newSize]
+                   (onResized [this terminal newSize]
                      (listener-fn (.getColumns newSize)
                                   (.getRows newSize))))]
     (.addResizeListener terminal listener)
