@@ -96,7 +96,6 @@
          charset (c/charsets charset)
          terminal (case kind
                     :auto   (DefaultTerminalFactory/createTerminal charset)
-                    :text   (DefaultTerminalFactory/createTextTerminal in out charset)
                     :unix   (DefaultTerminalFactory/createUnixTerminal in out charset)
                     :cygwin (DefaultTerminalFactory/createCygwinTerminal in out charset))]
      (when resize-listener
