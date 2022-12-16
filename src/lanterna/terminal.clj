@@ -2,7 +2,6 @@
   (:import com.googlecode.lanterna.terminal.DefaultTerminalFactory
            com.googlecode.lanterna.terminal.Terminal
            com.googlecode.lanterna.terminal.swing.SwingTerminal
-           com.googlecode.lanterna.terminal.swing.TerminalAppearance
            com.googlecode.lanterna.terminal.swing.TerminalPalette
            java.awt.GraphicsEnvironment
            java.awt.Font)
