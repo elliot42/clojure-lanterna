@@ -1,5 +1,5 @@
 (ns lanterna.terminal
-  (:import com.googlecode.lanterna.TerminalFacade
+  (:import com.googlecode.lanterna.DefaultTerminalFactory
            com.googlecode.lanterna.terminal.Terminal
            com.googlecode.lanterna.terminal.swing.SwingTerminal
            com.googlecode.lanterna.terminal.swing.TerminalAppearance
@@ -110,11 +110,11 @@
          out System/out
          charset (c/charsets charset)
          terminal (case kind
-                    :auto   (TerminalFacade/createTerminal charset)
+                    :auto   (DefaultTerminalFactory/createTerminal charset)
                     :swing  (get-swing-terminal cols rows opts)
-                    :text   (TerminalFacade/createTextTerminal in out charset)
-                    :unix   (TerminalFacade/createUnixTerminal in out charset)
-                    :cygwin (TerminalFacade/createCygwinTerminal in out charset))]
+                    :text   (DefaultTerminalFactory/createTextTerminal in out charset)
+                    :unix   (DefaultTerminalFactory/createUnixTerminal in out charset)
+                    :cygwin (DefaultTerminalFactory/createCygwinTerminal in out charset))]
      (when resize-listener
        (add-resize-listener terminal resize-listener))
      terminal)))
