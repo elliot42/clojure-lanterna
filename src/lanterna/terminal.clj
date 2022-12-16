@@ -179,28 +179,6 @@
   (move-cursor terminal 0 0))
 
 
-(defn set-fg-color [^Terminal terminal color]
-  (.applyForegroundColor terminal (c/colors color)))
-
-(defn set-bg-color [^Terminal terminal color]
-  (.applyBackgroundColor terminal (c/colors color)))
-
-(defn set-style
-  "Enter a style"
-  [^Terminal terminal style]
-  (.applySGR terminal (into-array com.googlecode.lanterna.terminal.Terminal$SGR [(c/enter-styles style)])))
-
-(defn remove-style
-  "Exit a style"
-  [^Terminal terminal style]
-  (.applySGR terminal (into-array com.googlecode.lanterna.terminal.Terminal$SGR [(c/exit-styles style)])))
-
-(defn reset-styles
-  "Reset all styles"
-  [^Terminal terminal]
-  (.applySGR terminal (into-array com.googlecode.lanterna.terminal.Terminal$SGR [c/reset-style])))
-
-
 (defn get-key
   "Get the next keypress from the user, or nil if none are buffered.
 
@@ -233,20 +211,3 @@
   ([^Terminal terminal] (get-key-blocking terminal {}))
   ([^Terminal terminal {:keys [interval timeout] :as opts}]
      (block-on get-key [terminal] opts)))
-
-
-(comment
-
-  (def t (get-terminal :swing
-                       {:cols 40 :rows 30
-                        :font ["Menlo"]
-                        :font-size 24
-                        :palette :gnome}))
-  (start t)
-  (set-fg-color t :yellow)
-  (put-string t "Hello, world!")
-  (get-key-blocking t {:timeout 1000})
-  (get-key-blocking t {:interval 2000})
-  (stop t)
-
-  )
