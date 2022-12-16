@@ -20,7 +20,7 @@
 
   "
   [^Terminal terminal listener-fn]
-  (let [listener (reify com.googlecode.lanterna.terminal.Terminal$ResizeListener
+  (let [listener (reify com.googlecode.lanterna.terminal.TerminalResizeListener
                    (onResized [this newSize]
                      (listener-fn (.getColumns newSize)
                                   (.getRows newSize))))]
