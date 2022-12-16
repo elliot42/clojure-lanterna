@@ -45,19 +45,6 @@
     (first (filter available fonts))))
 
 
-(defn- get-swing-terminal [cols rows
-                           {:as opts
-                            :keys [font font-size palette]
-                            :or {font ["Menlo" "Consolas" "Monospaced"]
-                                 font-size 14
-                                 palette :mac-os-x}}]
-  (let [font (get-font-name font)
-        appearance (new TerminalAppearance
-                        (new Font font Font/PLAIN font-size)
-                        (new Font font Font/BOLD font-size)
-                        (c/palettes palette) true)]
-    (new SwingTerminal appearance cols rows)))
-
 (defn get-terminal
   "Get a terminal object.
 
@@ -111,7 +98,6 @@
          charset (c/charsets charset)
          terminal (case kind
                     :auto   (DefaultTerminalFactory/createTerminal charset)
-                    :swing  (get-swing-terminal cols rows opts)
                     :text   (DefaultTerminalFactory/createTextTerminal in out charset)
                     :unix   (DefaultTerminalFactory/createUnixTerminal in out charset)
                     :cygwin (DefaultTerminalFactory/createCygwinTerminal in out charset))]
