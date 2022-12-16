@@ -95,9 +95,8 @@
          out System/out
          charset (c/charsets charset)
          terminal (case kind
-                    :auto   (DefaultTerminalFactory/createTerminal charset)
-                    :unix   (DefaultTerminalFactory/createUnixTerminal in out charset)
-                    :cygwin (DefaultTerminalFactory/createCygwinTerminal in out charset))]
+                    :auto   (DefaultTerminalFactory/createTerminal)
+                    :unix   (DefaultTerminalFactory/createUnixTerminal in out charset))]
      (when resize-listener
        (add-resize-listener terminal resize-listener))
      terminal)))
