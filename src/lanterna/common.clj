@@ -6,7 +6,7 @@
 (defn parse-key [^KeyStroke k]
   (when k
     (let [key-type (c/key-codes (.getKeyType k))]
-      (if (= key-type :normal)
+      (if (= key-type :character)
         (.getCharacter k)
         key-type))))
 
