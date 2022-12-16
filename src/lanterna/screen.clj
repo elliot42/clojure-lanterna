@@ -1,5 +1,6 @@
 (ns lanterna.screen
   (:import com.googlecode.lanterna.screen.Screen
+           com.googlecode.lanterna.screen.TerminalScreen
            com.googlecode.lanterna.terminal.Terminal)
   (:use [lanterna.common :only [parse-key block-on]])
   (:require [lanterna.constants :as c]
@@ -75,7 +76,7 @@
                rows 24
                charset :utf-8
                resize-listener nil}}]
-   (new Screen (t/get-terminal kind opts))))
+   (new TerminalScreen (t/get-terminal kind opts))))
 
 
 (defn start
