@@ -94,9 +94,10 @@
    (let [in System/in
          out System/out
          charset (c/charsets charset)
+         factory (DefaultTerminalFactory.)
          terminal (case kind
-                    :auto   (DefaultTerminalFactory/createTerminal)
-                    :unix   (DefaultTerminalFactory/createUnixTerminal in out charset))]
+                    :auto   (.createTerminal factory)
+                    :unix   (.createUnixTerminal factory in out charset))]
      (when resize-listener
        (add-resize-listener terminal resize-listener))
      terminal)))
