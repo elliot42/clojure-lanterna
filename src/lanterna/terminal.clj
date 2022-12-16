@@ -1,5 +1,5 @@
 (ns lanterna.terminal
-  (:import com.googlecode.lanterna.DefaultTerminalFactory
+  (:import com.googlecode.lanterna.terminal.DefaultTerminalFactory
            com.googlecode.lanterna.terminal.Terminal
            com.googlecode.lanterna.terminal.swing.SwingTerminal
            com.googlecode.lanterna.terminal.swing.TerminalAppearance
