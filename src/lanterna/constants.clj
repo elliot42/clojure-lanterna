@@ -44,6 +44,18 @@
    com.googlecode.lanterna.input.KeyType/Tab :tab
    com.googlecode.lanterna.input.KeyType/ReverseTab :reverse-tab
    com.googlecode.lanterna.input.KeyType/Enter :enter
+   com.googlecode.lanterna.input.KeyType/F1 :f1
+   com.googlecode.lanterna.input.KeyType/F2 :f2
+   com.googlecode.lanterna.input.KeyType/F3 :f3
+   com.googlecode.lanterna.input.KeyType/F4 :f4
+   com.googlecode.lanterna.input.KeyType/F5 :f5
+   com.googlecode.lanterna.input.KeyType/F6 :f6
+   com.googlecode.lanterna.input.KeyType/F7 :f7
+   com.googlecode.lanterna.input.KeyType/F8 :f8
+   com.googlecode.lanterna.input.KeyType/F9 :f9
+   com.googlecode.lanterna.input.KeyType/F10 :f10
+   com.googlecode.lanterna.input.KeyType/F11 :f11
+   com.googlecode.lanterna.input.KeyType/F12 :f12
    com.googlecode.lanterna.input.KeyType/Unknown :unknown
    com.googlecode.lanterna.input.KeyType/CursorLocation :cursor-location})
 
